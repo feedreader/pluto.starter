@@ -1,0 +1,47 @@
+
+body {
+  font-family: sans-serif;
+}
+
+
+a {
+  text-decoration: none;
+  color: darkred; }
+
+  a:visited {
+    color: firebrick; }
+
+  a:hover {
+    text-decoration: underline; }
+
+
+
+#navwrap {
+  float: right;
+  background-color: white;
+  padding-left: 12px;
+  padding-bottom: 24px; }
+
+#nav {
+  width: 180px;
+  padding: 4px;
+  border: 1px solid #bbb;
+  background-color: #eee; }
+  #nav ul.subscriptions {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0; }
+
+
+.new-date {
+  border-bottom: 1px solid #9e9e9e;
+  border-top: 1px solid #9e9e9e;
+  padding-top: 3px;
+  padding-bottom: 3px; }
+
+
+hr.item-seperator {
+  border: none;
+  background-color: #ccc;
+  color: #ccc;
+  height: 1px; }

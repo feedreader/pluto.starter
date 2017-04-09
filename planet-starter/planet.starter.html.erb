@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='generator' content='<%= Pluto.generator %>'>
+
+  <title><%= site.title %></title>
+
+  <%= stylesheet_link_tag 'css/planet.starter' %>
+</head>
+<body>
+
+
+<div id='navwrap'>
+<div id='nav'>
+    <p>
+      Last Update
+    </p>
+    <p class='small'>
+      <% if site.fetched %>
+        <%= site.fetched.strftime('%A, %d. %B %Y %H:%M') %>
+      <% end %>
+    </p>
+
+    <p>Subscriptions</p>
+    <ul class='subscriptions small' >
+     <% site.feeds.each do |feed| %>
+      <li>
+        <%= link_to( image_tag('i/feed-icon-10x10.png'), feed.feed_url ) %>
+        <%= link_to feed.title, feed.url %>
+      </li>
+     <% end %>
+     </ul>
+
+    <p>Meta</p>
+    <p class='small'>Powered by <a href='https://github.com/feedreader'>Pluto</a>;
+       Questions? Comments?
+      Send them along to the <a href='http://groups.google.com/group/wwwmake'>forum/mailing list</a>. Thanks!
+    </p>
+</div>
+</div>
+
+
+<h1><%= site.title %></h1>
+
+
+<!-- 1) list headlines w/ inline links -->
+
+<div class='contents'>
+
+<p><b>Contents</b></p>
+<ol>
+
+<% site.items.latest.limit(17).each_with_index do |item,index| %>
+  <li>
+      <%= link_to item.title, '#'+"#{index+1}" %>
+      <span class='item-feed-title'>
+        &bull; <%= link_to item.feed.title, item.feed.url %>
+       </span>
+      <span class='item-published'>
+         &bull;  <%= time_ago_in_words( item.published ) %>
+      </span>
+  </li>
+<% end %><!-- each item -->
+
+</ol>
+</div>
+
+
+
+
+<!-- 2) list full articles -->
+
+<%
+   items = site.items.latest.limit(17)
+   index = 0
+   ItemCursor.new( items ).each do |item, new_date, new_feed|
+     index += 1
+%>
+
+
+<% if new_date %>
+ <h2 class='new-date'>
+  <%= item.published.strftime('%A, %d. %B %Y') %>
+ </h2>
+<% else %>
+  <hr class='item-seperator'>
+<% end %>
+
+
+<article class='item' id='<%= "#{index}" %>'>
+
+<% if new_feed %>
+<h4 class='feed-title'>
+  <%= link_to item.feed.title, item.feed.url %>
+</h4>
+<% end %>
+
+
+<h3 class='item-title'>
+ <%= link_to item.title, item.url %>
+</h3>
+
+<div class='item-body'>
+
+
+<div class='item-content item-summary'>
+
+<!-- note: content goes first; than try summary
+  -->
+<% if item.content %>
+  <%= item.content %>
+<% elsif item.summary %>
+  <%= item.summary %>
+<% else %>
+  -/-
+<% end %>
+
+</div>
+
+<div class='item-footer'>
+   <%= item.published.strftime('%H:%M') %> &bull;
+   <%= time_ago_in_words( item.published ) %>
+</div>
+
+</div><!-- item-body -->
+
+</article><!-- item -->
+
+
+<% end %><!-- each item -->
+
+
+</body>
+</html>

@@ -1,7 +1,18 @@
-########################################
-# planet template pack manifest
-#   lists all files (html, css, js, images, etc.) that get copied or merged
-#
+##########################################
+# planet starter template pack manifest
+##########################################
 
+
+#######
+#  main planet template - gets merged (uses embedded ruby)
 
 __file__.starter.html    planet.starter.html.erb
+
+
+
+########
+#  more files - get copied 1:1
+
+css/planet.starter.css
+
+i/feed-icon-10x10.png

@@ -83,11 +83,11 @@ This will
 2) store all entries in a local single-file SQLite database,
 that is, `planet.db` in your working folder and
 
-3) generate a planet web page, that is, `planet.html` in your build folder
+3) generate a planet web page, that is, `planet.starter.html` in your build folder
 using the [`starter` template pack](planet-starter) in the `planet-starter` folder
 using all feed entries from the local database.
 
-Open up `build/planet.html` in your web browser
+Open up `build/planet.starter.html` in your web browser
 to see your planet web page. Voila!
 
 
@@ -106,12 +106,46 @@ Happy planet!
 
 
 
+## Questions 'n' Answers
+
+**Q: How can I update the web feeds and (re)built the planet page(s)?**
+
+A: Rerun the command:
+
+    $ bundle exec pluto build planet.ini -t starter -o build
+
+That's it ;-) The pluto feed fetcher will use conditional HTTP get requests and content hash checks for web feeds etc.
+
+
+
+**Q: For testing how can I (re)built the planet pages(s) WITHOUT fetching the web feeds?**
+
+A: Use the merge command:
+
+    $ bundle exec pluto merge -t starter -o build
+
+Note: You do NOT need to pass along the `planet.ini` configuration on merge - everything
+(e.g. planet title, web feed subscriptions, etc.) is stored in the
+local single-file SQLite database, that is, `planet.db` in your working folder.
+
+
+**Q: How can I update the web feeds WITHOUT (re)builting the planet page(s)?**
+
+A: Use the update command:
+
+    $ bundle exec pluto update
+
+Note: You do NOT need to pass along the `planet.ini` configuration on merge - everything
+(e.g. planet title, web feed subscriptions, etc.) is stored in the
+local single-file SQLite database, that is, `planet.db` in your working folder.
+
+
 
 ## References
 
 - [Pluto Planet Guide (Book Edition)](https://feedreader.github.io) - Official Documentation
 - [Pluto Planet Template Packs/Themes](http://planet-templates.github.io) - Blank, Digest, Hacker, Paper, Forty, News, Top 'n' More
-
+- [Talk Notes - New Horizons - Build Your Own (Static) Planet News Site w/ Pluto (and Ruby)](https://github.com/geraldb/talks/blob/master/planet.md)
 
 
 ## License
