@@ -1,10 +1,10 @@
 
-# pluto.starter - Planet Pluto Quick Starter Kit
+# Planet Pluto Quick Starter Kit
 
 
 ## Step 0: Download and Unpack (or Clone)
 
-To get started:
+Welcome to Planet Pluto. To get started:
 
 Option I) Download (that is, click on the green "Clone or download" button on the right side and than "Download ZIP") and unpack the zip archive.
 
@@ -34,7 +34,7 @@ with all dependencies and versions locked down.
 
 Try:
 
-   $ bundle exec pluto help
+    $ bundle exec pluto help
 
 to check up on your pluto installation. Resulting in:
 
@@ -74,12 +74,38 @@ Now build the sample starter planet. Try:
     $ bundle exec pluto build planet.ini -t starter -o build
 
 
+This will
+
+1) fetch all feeds listed in [`planet.ini`](planet.ini) and
+
+2) store all entries in a local database, that is, `planet.db` in your working folder and
+
+3) generate a planet web page, that is, `planet.html` using the [`starter` template pack](starter) in your build folder using all feed entries from the local database.
+
+Open up `build/planet.html` in your web browser
+to see your planet web page. Voila!
+
+
+
+## What's Next?
+
+Now change the planet configuration in [`planet.ini`](planet.ini) to fit your needs.
+Change the title and add your web feeds.
+
+Look & feel. Change the starter templates in [`starter`](starter)
+to your liking
+or use a pre-made template pack / theme.
+
+Happy planet!
 
 
 
 
 
+## References
 
+- [Pluto Planet Guide (Book Edition)](https://feedreader.github.io) - Official Documentation
+- [Pluto Planet Template Packs/Themes](http://planet-templates.github.io) - Blank, Digest, Hacker, Paper, Forty, News, Top 'n' More
 
 
 
