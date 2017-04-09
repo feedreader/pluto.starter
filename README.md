@@ -2,7 +2,7 @@
 # Planet Pluto Quick Starter Kit
 
 Welcome to Planet Pluto.
-(Auto-)build your own planet news site from web feeds.
+(Auto-)build your own (static) planet news site from web feeds.
 
 
 
@@ -188,7 +188,7 @@ Happy planet!
 
 ## Questions 'n' Answers
 
-**Q: How can I update the web feeds and (re)built the planet page(s)?**
+**Q: How can I update the web feeds and (re)build the planet page(s)?**
 
 A: Rerun the command:
 
@@ -198,7 +198,7 @@ That's it ;-) The pluto feed fetcher will use conditional HTTP get requests and 
 
 
 
-**Q: For testing how can I (re)built the planet pages(s) WITHOUT fetching the web feeds?**
+**Q: For testing how can I (re)build the planet pages(s) WITHOUT fetching the web feeds?**
 
 A: Use the merge command:
 
@@ -209,7 +209,7 @@ Note: You do NOT need to pass along the `planet.ini` configuration on merge - ev
 local single-file SQLite database, that is, `planet.db` in your working folder.
 
 
-**Q: How can I update the web feeds WITHOUT (re)builting the planet page(s)?**
+**Q: How can I update the web feeds WITHOUT (re)building the planet page(s)?**
 
 A: Use the update command:
 
