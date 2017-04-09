@@ -1,10 +1,14 @@
 
 # Planet Pluto Quick Starter Kit
 
+Welcome to Planet Pluto.
+(Auto-)build your own planet news site from web feeds.
+
+
 
 ## Step 0: Download and Unpack (or Clone)
 
-Welcome to Planet Pluto. To get started:
+To get started:
 
 Option I) Download (that is, click on the green "Clone or download" button on the right side and than "Download ZIP") and unpack the zip archive.
 
@@ -49,7 +53,7 @@ VERSION
     1.2.3
 
 GLOBAL OPTIONS
-    -c, --config=PATH - Configuration Path (default: C:\Users\gerald/.pluto)
+    -c, --config=PATH - Configuration Path (default: ~/.pluto)
     --help            - Show this message
     -q, --quiet       - Only show warnings, errors and fatal messages
     --verbose         - (Debug) Show debug messages
@@ -63,8 +67,6 @@ COMMANDS
     install, i    - Install template pack
     list, ls, l   - List installed template packs
     merge, m      - Merge planet template pack
-    test          - (Debug) Show global options, options, arguments for test
-                    command
     update, up, u - Update planet feeds
 ```
 
