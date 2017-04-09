@@ -87,6 +87,86 @@ that is, `planet.db` in your working folder and
 using the [`starter` template pack](planet-starter) in the `planet-starter` folder
 using all feed entries from the local database.
 
+
+Example (first time) console output:
+
+```
+pluto/1.2.3 on Ruby 2.1.5
+
+db settings:
+{:adapter=>"sqlite3", :database=>"./planet.db"}
+
+-- create_table(:logs)
+-- create_table(:props)
+-- create_table(:activities)
+-- create_table(:sites)
+-- create_table(:subscriptions)
+-- create_table(:feeds)
+-- create_table(:items)
+
+dump >planet.ini<:
+{"title"=>"Planet Open Data News",
+ "osm"=>
+  {"title"=>"Open Street Map (OSM) News",
+   "link"=>"https://blog.openstreetmap.org",
+   "feed"=>"https://blog.openstreetmap.org/feed/"},
+ "okfnlabs"=>
+  {"title"=>"Open Knowledge Foundation (OKFN) Labs News",
+   "link"=>"http://okfnlabs.org/blog",
+   "feed"=>"http://okfnlabs.org/blog/feed.xml"},
+ "schemaorg"=>
+  {"title"=>"schema.org News",
+   "link"=>"http://blog.schema.org",
+   "feed"=>"http://blog.schema.org/feeds/posts/default"},
+ "wikidata"=>
+  {"title"=>"Wikidata News",
+   "link"=>"http://blog.wikimedia.org/c/technology/wikidata",
+   "feed"=>"http://blog.wikimedia.org/c/technology/wikidata/feed/"}}
+
+Updating feed subscription >osm< - >https://blog.openstreetmap.org/feed/<...
+Updating feed subscription >okfnlabs< - >http://okfnlabs.org/blog/feed.xml<...
+Updating feed subscription >schemaorg< - >http://blog.schema.org/feeds/posts/default<...
+Updating feed subscription >wikidata< - >http://blog.wikimedia.org/c/technology/wikidata/feed/<...
+
+OK - fetching feed 'osm' - HTTP status 200 OK
+** NEW | OpenStreetMap Featured Images
+** NEW | OSM first to honour plate tectonics
+** NEW | SotM 2018 Call for Venues
+** NEW | Use of CC BY 4.0 licensed data in OpenStreetMap
+...
+
+OK - fetching feed 'okfnlabs' - HTTP status 200 OK
+** NEW | Data Package Pipelines
+** NEW | Case Studies for Frictionless Data
+** NEW | Embulk at csv,conf,v2
+** NEW | Using Data Packages with Pandas
+...
+
+OK - fetching feed 'schemaorg' - HTTP status 200 OK
+** NEW | Schema.org 3.2 release: courses, fact-checking, digital publishing accessibility, menus and more...
+** NEW | schema.org update: hotels, datasets, "health-lifesci" and "pending" extensions...
+** NEW | GS1 Web vocabulary: welcoming the first schema.org external extension
+** NEW | Schema.org: what's new?
+...
+
+OK - fetching feed 'wikidata' - HTTP status 200 OK
+** NEW | Your October milestones include Wikidata’s 15 millionth item
+** NEW | Wikidata, coming soon to a menu near you
+** NEW | Developers gather in France for the 2015 Wikimedia Hackathon
+** NEW | It’s time for some #tastydata
+...
+
+Merging template pack 'starter'
+  Loading template manifest planet-starter/starter.txt...
+  Merging to planet.starter.html...
+  Loading template (from file) >planet-starter/planet.starter.html.erb<...
+  Copying to css/planet.starter.css from planet-starter/css/planet.starter.css...
+  Copying to i/feed-icon-10x10.png from planet-starter/i/feed-icon-10x10.png...
+Done (in 0.42304 s).
+Done.
+```
+
+
 Open up `build/planet.starter.html` in your web browser
 to see your planet web page. Voila!
 
