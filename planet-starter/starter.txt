@@ -1,0 +1,7 @@
+########################################
+# planet template pack manifest
+#   lists all files (html, css, js, images, etc.) that get copied or merged
+#
+
+
+__file__.starter.html    planet.starter.html.erb

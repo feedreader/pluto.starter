@@ -80,9 +80,12 @@ This will
 
 1) fetch all feeds listed in [`planet.ini`](planet.ini) and
 
-2) store all entries in a local database, that is, `planet.db` in your working folder and
+2) store all entries in a local single-file SQLite database,
+that is, `planet.db` in your working folder and
 
-3) generate a planet web page, that is, `planet.html` using the [`starter` template pack](starter) in your build folder using all feed entries from the local database.
+3) generate a planet web page, that is, `planet.html` in your build folder
+using the [`starter` template pack](planet-starter) in the `planet-starter` folder
+using all feed entries from the local database.
 
 Open up `build/planet.html` in your web browser
 to see your planet web page. Voila!
@@ -94,7 +97,7 @@ to see your planet web page. Voila!
 Now change the planet configuration in [`planet.ini`](planet.ini) to fit your needs.
 Change the title and add your web feeds.
 
-Look & feel. Change the starter templates in [`starter`](starter)
+Look & feel. Change the starter templates in [`planet-starter`](planet-starter)
 to your liking
 or use a pre-made template pack / theme.
 
@@ -109,6 +112,14 @@ Happy planet!
 - [Pluto Planet Guide (Book Edition)](https://feedreader.github.io) - Official Documentation
 - [Pluto Planet Template Packs/Themes](http://planet-templates.github.io) - Blank, Digest, Hacker, Paper, Forty, News, Top 'n' More
 
+
+
+## License
+
+![](https://publicdomainworks.github.io/buttons/zero88x31.png)
+
+The `pluto.starter` scripts and templates are dedicated to the public domain.
+Use it as you please with no restrictions whatsoever.
 
 
 ## Questions? Comments?
