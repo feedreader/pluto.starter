@@ -2,5 +2,5 @@ source "https://rubygems.org"
 
 gem "pluto"
 
-gem "activerecord", "4.2.8"
+gem "activerecord"
 gem "sqlite3"
