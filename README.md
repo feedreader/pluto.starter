@@ -31,7 +31,7 @@ To install the planet pluto tools and libraries use Ruby built-in standard packa
 
 Try:
 
-    $ bundle exec pluto help
+    $ pluto help
 
 to check up on your pluto installation. Resulting in:
 
@@ -66,7 +66,7 @@ COMMANDS
 
 Now build the sample starter planet. Try:
 
-    $ bundle exec pluto build planet.ini -t starter -o build
+    $ pluto build planet.ini -t starter -o build
 
 
 This will
@@ -213,7 +213,7 @@ Note: You do NOT need to pass along the `planet.ini` configuration on merge - ev
 local single-file SQLite database, that is, `planet.db` in your working folder.
 
 
-**Q: How can I install Pluto with a Gemfile and ruby's bundler "virtual env" manager and locked down versions of all dependencies?
+**Q: How can I install Pluto with a Gemfile and ruby's bundler "virtual env" manager and locked down versions of all dependencies?**
 
 A: To install the planet pluto tools and libraries with "locked down" versions in a virtual / isolated
 environment use ruby's bundler. Ruby's bundler requires a `Gemfile` to
