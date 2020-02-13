@@ -254,6 +254,44 @@ becomes
 and so on.
 
 
+**Q: What packages for Debian (above a slim base image) allow the bundle install to succeed?**
+
+A:  A sufficient set of packages for Debian (above a slim base image) 
+to allow the `bundle install` to succeed is:
+
+    git ruby-bundler sqlite3 sudo gcc make libsqlite3-dev ruby-dev
+
+And a minimal Dockerfile looks like:
+
+```
+FROM debian:buster-slim
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends --no-install-suggests \
+	git ruby-bundler sqlite3 sudo gcc make
+
+RUN export uid=1000 gid=1000 && \
+    mkdir -p /home/developer && \
+    echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
+    /usr/bin/passwd -d developer && \
+    echo "developer:x:${uid}:" >> /etc/group && \
+    echo "developer ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers  && \
+    chown -R developer:1000 /home/developer/
+
+USER developer
+ENV HOME /home/developer
+
+
+WORKDIR /home/developer
+
+RUN git clone https://github.com/feedreader/pluto.starter ; chown -R developer pluto.starter
+
+CMD ["/bin/bash"]
+```
+
+Contributed by / Thanks to [Nathan Wallach](https://github.com/taniwallach)
+
+
 
 
 ## References
