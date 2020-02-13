@@ -16,22 +16,65 @@ Or
 
 Option II) Use git and clone this repo e.g.
 
-    $ git clone https://github.com/feedreader/pluto.starter.git
+    $ git clone https://github.com/feedreader/pluto.starter
 
 
 
 ## Step 1: Install the Planet Pluto Machinery / Tool
 
+
+**Option I - Ruby Gem Package
+
 To install the planet pluto tools and libraries use
-ruby's bundler e.g.
+ruby's gem package management tool e.g.
 
     $ cd pluto.starter
-    $ bundle install
+    $ gem install pluto
 
-Ruby's bundler will use the [`Gemfile`](Gemfile) to
-know what you want to install and will
-generate a `Gemfile.lock` that will list all libraries
-with all dependencies and versions locked down.
+
+**Option II - Ruby Bundler "Virtual Env" with Gemfile and Locked Down Versions of All Dependencies
+
+To install the planet pluto tools and libraries with "locked down" versions in a kind of virtual / isolated
+environment use ruby's bundler. Ruby's bundler requires a `Gemfile` to
+know what you want to install 
+Add add Gemfile in the `pluto.starter/` "top-level" directory. 
+Example:
+
+``` ruby
+source "https://rubygems.org"
+
+gem "pluto"
+```
+
+Now you can
+
+   $ bundle install
+
+and this will fetch and install all libraries and 
+generate a `Gemfile.lock` that lists all libraries
+with all dependencies (recursive all the way down) and all versions locked down.
+
+Note: If you use bundler and want to use the virtual / isolated environment 
+always start `pluto` commands with `bundle exec`.
+Example:
+
+    $ pluto help
+
+becomes
+    
+    $ bundle exec pluto help
+
+and
+
+    $ pluto build planet.ini -t starter -o build
+
+becomes
+    
+    $ bundle exec pluto build planet.ini -t starter -o build
+
+and so on.
+
+
 
 
 ## Step 2: Build the Starter Planet
