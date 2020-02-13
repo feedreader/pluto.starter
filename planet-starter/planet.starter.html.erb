@@ -57,8 +57,8 @@
       <span class='item-feed-title'>
         &bull; <%= link_to item.feed.title, item.feed.url %>
        </span>
-      <span class='item-published'>
-         &bull;  <%= time_ago_in_words( item.published ) %>
+      <span class='item-updated'>
+         &bull;  <%= time_ago_in_words( item.updated ) %>
       </span>
   </li>
 <% end %><!-- each item -->
@@ -81,7 +81,7 @@
 
 <% if new_date %>
  <h2 class='new-date'>
-  <%= item.published.strftime('%A, %d. %B %Y') %>
+  <%= item.updated.strftime('%A, %d. %B %Y') %>
  </h2>
 <% else %>
   <hr class='item-seperator'>
@@ -119,8 +119,8 @@
 </div>
 
 <div class='item-footer'>
-   <%= item.published.strftime('%H:%M') %> &bull;
-   <%= time_ago_in_words( item.published ) %>
+   <%= item.updated.strftime('%H:%M') %> &bull;
+   <%= time_ago_in_words( item.updated ) %>
 </div>
 
 </div><!-- item-body -->
