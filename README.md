@@ -22,7 +22,7 @@ Option II) Use git and clone this repo e.g.
 
 ## Step 1: Install the Planet Pluto Machinery / Tool
 
-To install the planet pluto tools and libraries use Ruby built-in standard package manager / installer e.g.
+To install the planet pluto tools and libraries use ruby's built-in standard package manager / installer e.g.
 
     $ gem install pluto
 
