@@ -1,13 +1,14 @@
 ####
-#  note for now ignore Gemfile.lock
+#  note for now ignore Gemfile and Gemfile.lock
 #    regenerate for each platfrom e.g. linux/mac/windows etc.
 
+Gemfile
 Gemfile.lock
 
 
 ###
 # ignore database and output folders
 
-planet.db
+*.db
 o/
 build/
